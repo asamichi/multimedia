@@ -1,0 +1,49 @@
+<html>
+ <head>
+	<title>menu</title><meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<LINK rel="stylesheet" href="change.css" type="text/css">
+<meta content="text/html; charset=Shift_JIS" http-equiv="content-type" />
+
+ </head>
+<body>
+<SCRIPT language="JavaScript">
+<!--
+// ツリーメニュー
+flag = false;
+function treeMenu(tName) {
+  tMenu = document.all[tName].style;
+  if(tMenu.display == 'none') tMenu.display = "block";
+  else tMenu.display = "none";
+}
+//-->
+</script>
+</body>
+<font size=2>
+コンテンツ<br>
+
+<br>
+<a href="top.html" target="main">トップ</a><br><br>
+
+<A href="javaScript:treeMenu('treeMenu1')">■シャドログ</a><br>
+<DIV id="treeMenu1" style="display:none">
+┣ <A href="http://shadowlog.com/mypage/" target="main">マイページ</A><BR>
+┣ <A href="http://shadowlog.com/mypage/add" target="main">戦績追加</A><BR>
+┣ <A href="http://shadowlog.com/mypage/analyze?m=4" target="main">デッキ勝率</A><BR>
+┗ <A href="http://live.shadowlog.com/" target="main">配信一覧</A><BR>
+</DIV>
+<br><br><br>
+<A href="javaScript:treeMenu('treeMenu2')">■シャドレコ</a><br>
+<DIV id="treeMenu2" style="display:none">
+┣ <A href="http://syadoreco.com/web/match" target="main">戦績</A><BR>
+┣ <A href="http://syadoreco.com/web/match/new" target="main">戦績追加</A><BR>
+┣ <A href="http://syadoreco.com/web/my_deck" target="main">マイデッキ</A><BR>
+┗ <A href="http://syadoreco.com/web/analytics/overview/0" target="main">メタレポ</A><BR>
+</DIV>
+<br><br><br>
+<a href="serch.html" target="main">検索補助</a>
+</font>
+
+</html>
+

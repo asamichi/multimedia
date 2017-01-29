@@ -1,0 +1,181 @@
+<html>
+<head>
+<title>検索補助ツール</title>
+<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+</head>
+<body>
+<table border="1">
+<tr>
+<td>elf</td>
+<td>royal</td>
+<td>witch</td>
+<td>dragon</td>
+<td>necro</td>
+<td>vampire</td>
+<td>bishop</td>
+<td>other</td>
+</tr>
+<form name="form1" id="id_form">
+<tr>
+<td>
+      <select name="select_elf">
+        <option value="エルフ">エルフ</option>
+        <option value="薔薇">薔薇</option>
+        <option value="白銀">白銀</option>
+        <option value="白薔薇">白薔薇</option>
+      </select>
+</td>
+<td>
+      <select name="select_royal">
+        <option value="ロイヤル">ロイヤル</option>
+        <option value="御旗">御旗</option>
+        <option value="天空城">天空城</option>
+      </select>
+</td>
+<td>
+      <select name="select_witch">
+        <option value="ウィッチ">ウィッチ</option>
+        <option value="超越">超越</option>
+        <option value="土">土</option>
+        <option value="秘術">秘術</option>
+        <option value="ドロシー">ドロシー</option>       
+      </select>
+</td>
+<td>
+      <select name="select_dragon">
+        <option value="ドラゴン">ドラゴン</option>
+        <option value="ランプ">ランプ</option>
+      </select>
+</td>
+<td>
+      <select name="select_necro">
+        <option value="ネクロ">ネクロ</option>
+        <option value="ネフティス">ネフティス</option>
+      </select>
+</td>
+<td>
+      <select name="select_vampire">
+        <option value="ヴァンプ">ヴァンプ</option>
+         <option value="ヴ">ヴ</option>       
+        <option value="昆布">昆布</option>
+      </select>
+</td>
+<td>
+      <select name="select_bishop">
+        <option value="ビショップ">ビショップ</option>
+        <option value="ビショ">ビショ</option>
+        <option value="陽光">陽光</option>
+        <option value="疾走">疾走</option>
+        <option value="エイラ">エイラ</option>
+        <option value="セラフ">セラフ</option>
+      </select>
+</td>
+<td>
+      <select name="select_other">
+        <option value="ニュートラル">ニュートラル</option>
+        <option value="冥府">冥府</option>
+        <option value="OTK">OTK</option>
+        <option value="シャドウバース">シャドウバース</option>
+        <option value="シャドバ">シャドバ</option>
+        <option value="アグロ">アグロ</option>
+        <option value="ミッドレンジ">ミッドレンジ</option>
+        <option value="コントロール">コントロール</option>
+      </select>
+</td>
+</tr>
+<tr>
+<td><input type="button" id="button_elf" value="追加"></td>
+<td><input type="button" id="button_royal" value="追加"></td>
+<td><input type="button" id="button_witch" value="追加"></td>
+<td><input type="button" id="button_dragon" value="追加"></td>
+<td><input type="button" id="button_necro" value="追加"></td>
+<td><input type="button" id="button_vampire" value="追加"></td>
+<td><input type="button" id="button_bishop" value="追加"></td>
+<td><input type="button" id="button_other" value="追加"></td>
+</table>
+検索ワード:<span id="word"></span><br>
+検索サイト <select name="select_engine" onChange="link_gen()">
+        <option value="https://www.google.co.jp/search?q=">google</option>
+       <option value="https://twitter.com/search?src=typd&q=">twitter</option>
+      </select><br>
+
+<a href="./serch.html" target="_brank" id="link_brank">検索</a><br>
+    </form>
+    
+
+    
+    <script>
+    serch_list=[];
+    serch_word=""
+      window.onload = function () {
+        b_elf = document.getElementById('button_elf');
+        b_elf.addEventListener('click', click_elf, false);
+        b_royal = document.getElementById('button_royal');
+        b_royal.addEventListener('click', click_royal, false);
+        b_witch = document.getElementById('button_witch');
+        b_witch.addEventListener('click', click_witch, false);
+        b_dragon = document.getElementById('button_dragon');
+        b_dragon.addEventListener('click', click_dragon, false);
+        b_necro = document.getElementById('button_necro');
+        b_necro.addEventListener('click', click_necro, false);
+        b_vampire = document.getElementById('button_vampire');
+        b_vampire.addEventListener('click', click_vampire, false);
+        b_bishop = document.getElementById('button_bishop');
+        b_bishop.addEventListener('click', click_bishop, false);
+        b_other = document.getElementById('button_other');
+        b_other.addEventListener('click', click_other, false);
+      };
+      function click_elf(){
+      value = document.forms.id_form.select_elf.value
+      add("word",value)
+      }
+      function click_royal(){
+      value = document.forms.id_form.select_royal.value
+      add("word",value)
+      }
+      function click_witch(){
+      value = document.forms.id_form.select_witch.value
+      add("word",value)
+      }
+      function click_dragon(){
+      value = document.forms.id_form.select_dragon.value
+      add("word",value)
+      }
+      function click_necro(){
+      value = document.forms.id_form.select_necro.value
+      add("word",value)
+      }
+      function click_vampire(){
+      value = document.forms.id_form.select_vampire.value
+      add("word",value)
+      }
+      function click_bishop(){
+      value = document.forms.id_form.select_bishop.value
+      add("word",value)
+      }
+      function click_other(){
+      value = document.forms.id_form.select_other.value
+      add("word",value)
+      }
+      function add(a,b){
+      serch_list.push(b);
+      word_gen();
+      document.getElementById(a).textContent = serch_word;
+      link_gen();
+      }
+      
+      function link_gen(){
+      link_brank=document.getElementById("link_brank")
+      link_brank.href=document.forms.id_form.select_engine.value + serch_word;
+      }
+      function word_gen(){
+      serch_word="";
+      i = serch_list.length;
+      for(var num=0;num<i;num++){
+      serch_word+=serch_list[num]+" ";
+      }
+      }
+      
+</script>
+</body>
+</html>

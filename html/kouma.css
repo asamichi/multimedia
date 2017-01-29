@@ -1,0 +1,25 @@
+body{
+background-color:#000000;
+color:#f0e0d0;
+}
+
+
+
+a{/*リンクされた文字*/
+    color:#c0ffc0;
+    font-style:normal;
+    text-decoration:underline;
+}
+
+
+a:visited {/*訪問後のリンク*/
+    color:#80c080;
+    text-decoration:underline;
+}
+
+
+a:hover {/*マウスをのせたとき*/
+    color:#80c080;
+    font-style:normal;
+    text-decoration:underline;
+{
