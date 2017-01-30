@@ -2,8 +2,13 @@
 <head>
 <title>検索補助ツール</title>
 <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+<LINK rel="stylesheet" href="change.css" type="text/css">
+
 </head>
 <body>
+<iframe src="ue.html" frameborder=0 width="100%" height=70px></iframe>
+<br>
+
 <table border="1">
 <tr>
 <td>elf</td>
@@ -92,14 +97,17 @@
 <td><input type="button" id="button_vampire" value="追加"></td>
 <td><input type="button" id="button_bishop" value="追加"></td>
 <td><input type="button" id="button_other" value="追加"></td>
-</table>
-検索ワード:<span id="word"></span><br>
+</table><br>
+自由入力：<input type="form" id="free_form">　<input type="button" id="button_form" value="追加">     
+<br>
+<p>検索ワード:<span id="word"></span></p>
+<p><input type="button" id="button_del" value="1単語削除"><input type="button" id="button_alldel" value="クリア"></p>
 検索サイト <select name="select_engine" onChange="link_gen()">
         <option value="https://www.google.co.jp/search?q=">google</option>
        <option value="https://twitter.com/search?src=typd&q=">twitter</option>
       </select><br>
 
-<a href="./serch.html" target="_brank" id="link_brank">検索</a><br>
+<p><a href="./serch.html" target="_brank" id="link_brank" >検索</a></p><br>
     </form>
     
 
@@ -124,6 +132,12 @@
         b_bishop.addEventListener('click', click_bishop, false);
         b_other = document.getElementById('button_other');
         b_other.addEventListener('click', click_other, false);
+        b_form = document.getElementById('button_form');
+        b_form.addEventListener('click', click_form, false);
+        b_del = document.getElementById('button_del');
+        b_del.addEventListener('click', click_del, false);
+        b_del = document.getElementById('button_alldel');
+        b_del.addEventListener('click', click_alldel, false);        
       };
       function click_elf(){
       value = document.forms.id_form.select_elf.value
@@ -156,6 +170,23 @@
       function click_other(){
       value = document.forms.id_form.select_other.value
       add("word",value)
+      }
+      function click_form(){
+      value = document.forms.id_form.free_form.value
+      add("word",value)
+      document.forms.id_form.free_form.value="";
+      }
+      function click_del(){
+      serch_list.pop();
+      word_gen();
+      document.getElementById("word").textContent = serch_word;
+      link_gen();
+      }
+      function click_alldel(){
+      serch_list=[]
+      word_gen();
+      document.getElementById("word").textContent = serch_word;
+      link_gen();
       }
       function add(a,b){
       serch_list.push(b);

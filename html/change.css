@@ -1,9 +1,17 @@
 body{
 background-color:#ffffff;
 color:#606040;
+font-size: 0.8em;
+margin: 20px 10px;
+
+font-family:IPAGothic;
 }
-
-
+select{
+margin:3px 3px;
+}
+#word{
+margin:5px 5px;
+}
 
 a{/*ƒŠƒ“ƒN‚³‚ê‚½•¶Žš*/
     color:#a0a000;

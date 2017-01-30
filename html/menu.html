@@ -24,22 +24,29 @@ function treeMenu(tName) {
 コンテンツ<br>
 
 <br>
-<a href="top.html" target="main">トップ</a><br><br>
+<a href="top.html" target="main" class="menu">トップ</a><br><br>
 
-<A href="javaScript:treeMenu('treeMenu1')">■シャドログ</a><br>
+<A href="javaScript:treeMenu('treeMenu1')" class="menu">■シャドログ</a><br>
 <DIV id="treeMenu1" style="display:none">
 ┣ <A href="http://shadowlog.com/mypage/" target="main">マイページ</A><BR>
 ┣ <A href="http://shadowlog.com/mypage/add" target="main">戦績追加</A><BR>
 ┣ <A href="http://shadowlog.com/mypage/analyze?m=4" target="main">デッキ勝率</A><BR>
+┣ <A href="http://shadowlog.com/trend/" target="main">先週のメタ</A><BR>
 ┗ <A href="http://live.shadowlog.com/" target="main">配信一覧</A><BR>
 </DIV>
 <br><br><br>
-<A href="javaScript:treeMenu('treeMenu2')">■シャドレコ</a><br>
+<A href="javaScript:treeMenu('treeMenu2')" class="menu">■シャドレコ</a><br>
 <DIV id="treeMenu2" style="display:none">
-┣ <A href="http://syadoreco.com/web/match" target="main">戦績</A><BR>
-┣ <A href="http://syadoreco.com/web/match/new" target="main">戦績追加</A><BR>
-┣ <A href="http://syadoreco.com/web/my_deck" target="main">マイデッキ</A><BR>
-┗ <A href="http://syadoreco.com/web/analytics/overview/0" target="main">メタレポ</A><BR>
+┣ <A href="http://syadoreco.com/web/match" target="_blank">戦績</A><BR>
+┣ <A href="http://syadoreco.com/web/match/new" target="_blank">戦績追加</A><BR>
+┣ <A href="http://syadoreco.com/web/my_deck" target="_blank">マイデッキ</A><BR>
+┗ <A href="http://syadoreco.com/web/analytics/overview/0" target="_blank">メタレポ</A><BR>
+</DIV>
+<br><br><br>
+<A href="javaScript:treeMenu('treeMenu3')" class="menu">■ポータル</a><br>
+<DIV id="treeMenu3" style="display:none">
+┣ <A href="https://shadowverse-portal.com/mypage/deck" target="main">デッキ一覧</A><BR>
+┗ <A href="https://shadowverse-portal.com/deckbuilder/classes" target="main">デッキ作成</A><BR>
 </DIV>
 <br><br><br>
 <a href="serch.html" target="main">検索補助</a>
